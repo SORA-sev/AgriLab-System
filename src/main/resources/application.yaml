@@ -1,3 +1,26 @@
+server:
+  port: 8080 # 后端运行的端口
+
 spring:
   application:
     name: AgriLab-System
+
+  # MySQL 数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/agri_lab_db?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: 123456
+
+  # Redis 配置
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 0
+
+# MyBatis-Plus 配置
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 在控制台打印SQL语句
+    map-underscore-to-camel-case: true # 开启驼峰命名转换
